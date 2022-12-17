@@ -4,13 +4,13 @@ using namespace std;
 
 class Server{
 public:
-    string username();
-    string password();
-    string upload();
-    string download();
-    string erorr();
-    string quit();
-    string help();
+    int username();
+    int password();
+    int upload();
+    int download();
+    string massage();
+    int quit();
+    int help();
 
 private:
     int isAdmin = 0,
@@ -35,26 +35,33 @@ int main() {
     argv = arg_value(command);
 
     while (argv[0] != "exit"){
+        int m;
         if (argv[0] == "user"){
-            obj.username();
+            m = obj.username(argv[1]);
+            cout << obj.massage(m);
         }
         else if (argv[0] == "pass"){
-            obj.password();
+            m = obj.password();
+            cout << obj.massage(m);
         }
         else if (argv[0] == "retr"){
             obj.download();
+            cout << obj.massage(m);
         }
         else if (argv[0] == "Upload"){
             obj.upload();
+            cout << obj.massage(m);
         }
         else if (argv[0] == "help"){
             obj.help();
+            cout << obj.massage(m);
         }
         else if (argv[0] == "quit"){
             obj.quit();
+            cout << obj.massage(m);
         }
         else {
-            obj.erorr();
+            obj.massage();
         }
     }
 }
