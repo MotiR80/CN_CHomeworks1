@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdio.h>
 #include <string>
 #include <stdio.h>
 #include <string.h>   //strlen
@@ -15,7 +16,7 @@
 #include <json/value.h>
 #include <fstream>
 
-#define F_SIZE 1024
+#define F_SIZE 1048576  //1MB
 #define True 1
 #define False 0
 #define PATH "../Files/"
@@ -27,15 +28,15 @@ struct Client {
             isUser = 0,
             isLogin = 0,
             index = -1,
-            cmd_socket = 0,
-            data_socket = 0;
+            free_space = 0,
+            cmd_socket = 0;
     void reset(){
         isAdmin = 0;
         isUser = 0;
         isLogin = 0;
         index = -1;
+        free_space = 0;
         cmd_socket = 0;
-        data_socket = 0;
     }
 };
 struct CMD {
@@ -57,7 +58,7 @@ struct CMD {
 int username(string, Client &, Json::Value&);
 int password(string, Client &, Json::Value&);
 int upload(string, Client &, Json::Value&);
-int download(string, Client &, Json::Value&);
+int download(int, struct sockaddr_in, string, Client &, Json::Value &);
 string message(int);
 int quit();
 int help();
@@ -192,12 +193,11 @@ int main() {
         perror("bind failed");
         exit(EXIT_FAILURE);
     }
-    
+
     //------------------------------------------------------------------------------------------------
 
     // accept the incoming connection
     cmdLen = sizeof(cmd_channel);
-    dataLen = sizeof(data_channel);
     puts("Waiting for connections ...");
 
     while (true){
@@ -206,8 +206,7 @@ int main() {
 
         // add master socket to socket discriptor set (readsds)
         FD_SET(cmd_listener, &readsds);
-        FD_SET(data_listener, &readsds);
-        max_sd = max(data_listener, cmd_listener);
+        max_sd = cmd_listener;
 
         // add valid client socket to the set
         for (int j = 0; j < max_clients; ++j) {
@@ -306,13 +305,39 @@ int username(string uname, Client &client, Json::Value &config){
 int password(string pwd, Client &client, Json::Value &config){
     if (pwd == config["users"][client.index]["password"].asString()){
         client.isLogin = 1;
+        client.free_space = config["users"][client.index]["space"].asInt();
         return 230;
     }
     else
         return 430;
 }
 
-int download(string url, Client &client, Json::Value &config){
-    char data[1024];
-    int data_socket = client.cmd_socket;
+int download(int fd, struct sockaddr_in data_chanedl, string url, Client &client, Json::Value &config) {
+    // accept calling
+    int new_socket = accept(fd, (struct sockaddr *) &data_chanedl, (socklen_t *) sizeof(data_chanedl));
+
+    // char array with size 1MB
+    char data[F_SIZE];
+
+    // check file size
+    struct stat st;
+    stat((const char *) &url, &st);
+    int size = st.st_size;
+
+    if (size > F_SIZE) {
+        close(new_socket);
+        return (425);
+    }
+    else if (size > client.free_space){
+        close(new_socket);
+        return (425);
+    }
+
+    FILE *fp;
+    // store file
+    fp = fopen((const char*)&url, "r");
+    if (fgets(data, F_SIZE, fp) != NULL)
+        send(new_socket, data, strlen(data), 0);
+    close(new_socket);
+    return 226;
 }
