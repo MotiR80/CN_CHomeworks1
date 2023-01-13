@@ -1,3 +1,0 @@
-/home/motir80/Desktop/Apps/FTP/FTP_SERVER/build/CMakeFiles/FTP_SERVER.dir
-/home/motir80/Desktop/Apps/FTP/FTP_SERVER/build/CMakeFiles/edit_cache.dir
-/home/motir80/Desktop/Apps/FTP/FTP_SERVER/build/CMakeFiles/rebuild_cache.dir
