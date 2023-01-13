@@ -161,3 +161,36 @@ request_parse(request, res);
 ```
 
 Then parse the request then extract content type and read the requested file then send it and close the socket.
+
+## Example
+First we run server.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/HTTP%20SERVER/Examples/run-server.png" width =450/>
+
+Then open browser and enter ip:port --> `127.0.0.1:34002/`.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/HTTP%20SERVER/Examples/open-browser-goto-website.png" width =450/>
+
+We redirect to address `127.0.0.1:34002/index.html`.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/HTTP%20SERVER/Examples/redirect.png" width =450/>
+
+Now click on image.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/HTTP%20SERVER/Examples/open-img.png" width =450/>
+
+Now click on gif.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/HTTP%20SERVER/Examples/open-gif.png" width =450/>
+
+Now click on pdf.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/HTTP%20SERVER/Examples/open-pdf.png" width =450/>
+
+Now click on music.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/HTTP%20SERVER/Examples/open-music.png" width =450/>
+
+Now we enter invalid address. The 404.html file show.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/HTTP%20SERVER/Examples/invalid-addr.png" width =450/>
