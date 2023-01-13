@@ -742,4 +742,66 @@ We have three functions in client code that were in server code.
 `rm [path]` to remove a file or folder.
 
 ## Example
+This is server folder before run server.
 
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/before-run-server.png" width =450/>
+
+The server run.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/run-server.png" width =450/>
+
+After the server run. Files directory created. Also log.log created.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/after-run-server.png" width =450/>
+
+Log file created and updated.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/log-file-created.png" width =450/>
+
+Bad syntax and wrong username.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/invalid-user.png" width =450/>
+
+We entered a valid username but a wrong password then we entered valid password.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/valid-user-pass.png" width =450/>
+
+Now we make test.txt file in client directory. The size of file is 1kb. Now we want upload it on server.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/make-test-file.png" width =450/>
+
+Upload a test.txt with client that is not an admin.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/user-not-admin.png" width =450/>
+
+Login as admin and upload test.txt.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/login-as-admin-and-upload.png" width =450/>
+
+Uploaded successfuly in Files directory.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/upload-successfuly.png" width =450/>
+
+Now we want download test.txt.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/download.png" width =450/>
+
+Downloaded successfuly in download directory.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/download-successfuly.png" width =450/>
+
+Get list of files in Files directory
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/ls.png" width =450/>
+
+Now we remove test.txt and create a folder.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/remove and make.png" width =450/>
+
+`remaining_space` of user Mohsen is 1023 because of download test.txt with size 1k.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/free-space.png" width =450/>
+
+Log file updated.
+
+<img src="https://github.com/MotiR80/CN_CHomeworks1/blob/main/FTP/Examples/log-file-update.png" width =450/>
