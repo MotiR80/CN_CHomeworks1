@@ -1,0 +1,21 @@
+Hello!
+This is a test file.
+...
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+I wanna upload this file on the server and then download it.
+...................................
+
+The file size now is 1kB.
