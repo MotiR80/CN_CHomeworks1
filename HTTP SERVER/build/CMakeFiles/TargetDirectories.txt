@@ -1,0 +1,3 @@
+/home/motir80/Desktop/Apps/HTTP SERVER/build/CMakeFiles/HTTP_SERVER.dir
+/home/motir80/Desktop/Apps/HTTP SERVER/build/CMakeFiles/edit_cache.dir
+/home/motir80/Desktop/Apps/HTTP SERVER/build/CMakeFiles/rebuild_cache.dir
