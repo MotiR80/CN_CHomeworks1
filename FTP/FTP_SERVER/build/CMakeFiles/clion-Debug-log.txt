@@ -1,0 +1,4 @@
+/home/motir80/Desktop/Apps/clion-2022.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=/home/motir80/Desktop/Apps/vcpkg/vcpkg-2022.11.14/scripts/buildsystems/vcpkg.cmake -S /home/motir80/Desktop/Apps/FTP/FTP_SERVER -B /home/motir80/Desktop/Apps/FTP/FTP_SERVER/build
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/motir80/Desktop/Apps/FTP/FTP_SERVER/build

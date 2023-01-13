@@ -1,0 +1,3 @@
+ToolSet: 1.0 (local)Options: 
+
+Options:-DCMAKE_TOOLCHAIN_FILE=/home/motir80/Desktop/Apps/vcpkg/vcpkg-2022.11.14/scripts/buildsystems/vcpkg.cmake
